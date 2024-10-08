@@ -1,0 +1,5 @@
+package com.wakefit.ecommerce.dto;
+
+public class ProductDTO {
+
+}

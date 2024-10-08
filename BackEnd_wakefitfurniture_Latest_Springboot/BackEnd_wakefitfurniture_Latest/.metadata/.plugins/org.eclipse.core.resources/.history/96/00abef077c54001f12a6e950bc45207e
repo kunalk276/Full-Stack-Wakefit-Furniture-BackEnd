@@ -1,0 +1,56 @@
+package com.wakefit.ecommerce.controller;
+
+import com.wakefit.ecommerce.entity.Feedback;
+import com.wakefit.ecommerce.service.FeedbackService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController
+@RequestMapping("/api/v1/feedbacks")
+public class FeedbackController {
+
+    @Autowired
+    private FeedbackService feedbackService;
+
+    // Add feedback with userId and productId
+    @PostMapping("/user/{userId}/product/{productId}")
+    public ResponseEntity<Feedback> addFeedback(
+            @PathVariable("userId") Long userId,
+            @PathVariable("productId") Long productId,
+            @RequestBody Feedback feedback) {
+        Feedback createdFeedback = feedbackService.addFeedback(userId, productId, feedback);
+        return ResponseEntity.ok(createdFeedback);
+    }
+
+    @GetMapping("/{feedbackId}")
+    public ResponseEntity<Feedback> getFeedbackById(@PathVariable Long feedbackId) {
+        Feedback feedback = feedbackService.getFeedbackById(feedbackId);
+        return ResponseEntity.ok(feedback);
+    }
+
+    @GetMapping("/product/{productId}")
+    public ResponseEntity<List<Feedback>> getFeedbackByProductId(@PathVariable Long productId) {
+        List<Feedback> feedbackList = feedbackService.findAll()
+                .stream()
+                .filter(f -> f.getProduct().getProductId().equals(productId))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(feedbackList);
+    }
+
+    @PutMapping("/update/{feedbackId}")
+    public ResponseEntity<Feedback> updateFeedback(@PathVariable Long feedbackId, @RequestBody Feedback feedback) {
+        Feedback updatedFeedback = feedbackService.updateFeedback(feedbackId, feedback);
+        return ResponseEntity.ok(updatedFeedback);
+    }
+
+    @DeleteMapping("/delete/{feedbackId}")
+    public ResponseEntity<Void> deleteFeedback(@PathVariable Long feedbackId) {
+        feedbackService.deleteFeedback(feedbackId);
+        return ResponseEntity.noContent().build();
+    }
+}

@@ -1,0 +1,17 @@
+package com.wakefit.ecommerce.dto;
+
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class ProductDTO {
+    private Long productId;
+    private String name;
+    private String description;
+    private double price;
+    private String images;
+    private int stockQuantity;
+    private Long categoryId;
+}

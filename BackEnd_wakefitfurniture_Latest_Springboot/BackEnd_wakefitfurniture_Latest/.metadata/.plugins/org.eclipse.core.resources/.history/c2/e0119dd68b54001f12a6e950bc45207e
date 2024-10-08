@@ -1,0 +1,23 @@
+package com.wakefit.ecommerce.service;
+
+import com.wakefit.ecommerce.entity.Product;
+import java.util.List;
+
+public interface ProductService {
+
+    Product addProduct(Product product);
+
+    Product getProductById(Long productId);
+
+    Product updateProduct(Product product);
+
+    void deleteProduct(Long productId);
+
+    List<Product> findAll();
+
+    List<Product> searchProductsByName(String name);
+
+    List<Product> getProductsByCategory(Long categoryId);
+    
+    Product addProductToCategory(Long productId, Long categoryId);
+}
