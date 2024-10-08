@@ -33,13 +33,13 @@ This is the backend repository for the **Wakefit Furniture E-commerce** applicat
 
 ## Installation
 
-1. Clone the repository:
+1. **Clone the repository**:
    git clone https://github.com/kunalk276/Full-Stack-Wakefit-Furniture-BackEnd.git
    cd Full-Stack-Wakefit-Furniture-BackEnd
    
-2. Install the required dependencies:
+2. **Install the required dependencies**:
    mvn clean install
    Configure your application properties. Update the src/main/resources/application.properties file with your database and other configurations.
 
-3. Run the application:
+3.**Run the application**:
    mvn spring-boot:run
