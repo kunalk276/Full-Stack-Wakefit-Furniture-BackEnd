@@ -1,7 +1,7 @@
 # Full Stack Wakefit Furniture Backend devloped using Springboot
 
 This is the backend repository for the **Wakefit Furniture E-commerce** application, developed using Spring Boot. The project provides RESTful APIs for user authentication, product management, cart functionalities, and more.
-## SCREENSHOT
+
 ## Screenshots
 
 
