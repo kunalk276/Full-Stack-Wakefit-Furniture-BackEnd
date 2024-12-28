@@ -114,7 +114,7 @@ This is the backend repository for the **Wakefit Furniture E-commerce** applicat
 ![Screenshot 2024-12-19 194621](https://github.com/user-attachments/assets/05b3e0c6-e768-4ab0-984c-57b9e45ab547)
 
 
-![Screenshot 2024-12-19 194739](https://github.com/user-attachments/assets/a038d6b1-28a8-47da-8a4a-f3b5207a3ee3)
+
 
 ![Screenshot 2024-12-19 194752](https://github.com/user-attachments/assets/0b4de4fa-8b25-471e-8990-ab16cd26a64f)
 
